@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhakti Kumbhar | Portfolio</title>
+
   <style>
     *{
       margin:0;
@@ -13,31 +14,54 @@
     }
 
     body{
-      line-height:1.6;
       background:#f5f7fa;
       color:#333;
+      line-height:1.6;
     }
 
+    /* Header */
     header{
       background:linear-gradient(135deg,#4f46e5,#7c3aed);
       color:white;
-      text-align:center;
-      padding:80px 20px;
+      padding:70px 20px;
     }
 
-    header h1{
+    .hero{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .profile-img{
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      object-fit:cover;
+      border:6px solid white;
+      box-shadow:0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .hero-text{
+      max-width:500px;
+    }
+
+    .hero-text h1{
       font-size:3rem;
       margin-bottom:10px;
     }
 
-    header p{
+    .hero-text p{
       font-size:1.2rem;
-      opacity:0.9;
+      margin-bottom:20px;
+      opacity:0.95;
     }
 
     .btn{
       display:inline-block;
-      margin-top:20px;
       padding:12px 25px;
       background:white;
       color:#4f46e5;
@@ -59,9 +83,9 @@
 
     h2{
       text-align:center;
+      color:#4f46e5;
       margin-bottom:40px;
       font-size:2rem;
-      color:#4f46e5;
     }
 
     .about{
@@ -73,7 +97,7 @@
 
     .skills{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
       gap:20px;
       margin-top:20px;
     }
@@ -85,11 +109,6 @@
       border-radius:15px;
       box-shadow:0 4px 10px rgba(0,0,0,0.08);
       font-weight:bold;
-      transition:transform 0.3s;
-    }
-
-    .skill:hover{
-      transform:translateY(-5px);
     }
 
     .projects{
@@ -103,7 +122,7 @@
       padding:25px;
       border-radius:15px;
       box-shadow:0 4px 10px rgba(0,0,0,0.08);
-      transition:transform 0.3s;
+      transition:0.3s;
     }
 
     .project:hover{
@@ -126,36 +145,44 @@
 
     footer{
       text-align:center;
-      padding:20px;
       background:#111827;
       color:white;
+      padding:20px;
       margin-top:40px;
     }
 
-    @media (max-width:768px){
-      header{
-        padding:60px 15px;
+    /* Responsive */
+    @media(max-width:768px){
+      .hero{
+        flex-direction:column;
+        text-align:center;
       }
 
-      header h1{
+      .hero-text h1{
         font-size:2.2rem;
       }
 
-      header p{
+      .hero-text p{
         font-size:1rem;
+      }
+
+      .profile-img{
+        width:180px;
+        height:180px;
       }
 
       h2{
         font-size:1.6rem;
       }
-
-      section{
-        padding:50px 15px;
-      }
     }
 
-    @media (max-width:480px){
-      header h1{
+    @media(max-width:480px){
+      .profile-img{
+        width:150px;
+        height:150px;
+      }
+
+      .hero-text h1{
         font-size:1.9rem;
       }
 
@@ -163,37 +190,36 @@
         padding:10px 20px;
         font-size:0.95rem;
       }
-
-      .skill,
-      .project{
-        padding:18px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
   <header>
-    <h1>Bhakti Kumbhar</h1>
-    <p>B.Sc. Computer Science | Front-End Developer</p>
-    <a href="#contact" class="btn">Contact Me</a>
+    <div class="hero">
+
+      <img src="photo.jpg" alt="Bhakti" class="profile-img">
+
+      <div class="hero-text">
+        <h1>Bhakti Kumbhar</h1>
+        <p>B.Sc. Computer Science | Front-End Developer</p>
+        <a href="#contact" class="btn">Contact Me</a>
+      </div>
+
+    </div>
   </header>
 
-  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <div class="about">
       <p>
-        Hello! I am <strong>Bhakti Kumbhar</strong>, a B.Sc. Computer Science student and an aspiring
-        <strong>Front-End Developer</strong>. I enjoy creating clean, responsive, and user-friendly websites
-        using <strong>HTML</strong> and <strong>CSS</strong>. I am passionate about web development and continuously
-        learning new technologies to improve my skills.
+        Hello! I am <strong>Bhakti Kumbhar</strong>, a B.Sc. Computer Science student
+        and an aspiring <strong>Front-End Developer</strong>. I enjoy creating
+        clean, responsive, and user-friendly websites using HTML and CSS.
       </p>
     </div>
   </section>
 
-  <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
@@ -202,34 +228,33 @@
       <div class="skill">Responsive Design</div>
       <div class="skill">C</div>
       <div class="skill">C++</div>
-      <div class="skill">Java (Basic)</div>
+      <div class="skill">Java</div>
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
+
     <div class="projects">
 
       <div class="project">
-        <h3>Personal Portfolio</h3>
-        <p>A responsive portfolio website built using HTML and CSS.</p>
+        <h3>Personal Portfolio Website</h3>
+        <p>Modern responsive portfolio website created using HTML and CSS.</p>
       </div>
 
       <div class="project">
-        <h3>Calculator App</h3>
-        <p>Basic calculator project created during my programming internship.</p>
+        <h3>Calculator Application</h3>
+        <p>Simple calculator application developed during programming internship.</p>
       </div>
 
       <div class="project">
         <h3>Responsive Landing Page</h3>
-        <p>A modern landing page layout optimized for mobile and desktop devices.</p>
+        <p>Mobile-friendly landing page optimized for desktop, tablet, and smartphone devices.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact">
@@ -241,7 +266,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2026 Bhakti Kumbhar | All Rights Reserved</p>
   </footer>
